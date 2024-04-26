@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7fhgwcpnvom2"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_6450h"]
+[ext_resource type="PackedScene" uid="uid://c838a7fmy6wt" path="res://Pixel.tscn" id="2_5aqao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kjdbi"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_wkpwj"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -600.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6450h")
+pixel = ExtResource("2_5aqao")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(602, 602)
+layout_mode = 0
+offset_right = 602.0
+offset_bottom = 602.0
+color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(600, 600)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 601.0
+offset_bottom = 601.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 2
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kjdbi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = SubResource("ImageTexture_wkpwj")
