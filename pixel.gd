@@ -18,11 +18,6 @@ func _process(delta):
 	pass
 
 
-func _on_mouse_entered():
-	$PixelFill.color = Color("#555555")
-	hovering.emit(self)
-	#print("(%s, %s): %s" % [x, y, size])
-
-
-func _on_mouse_exited():
-	$PixelFill.color = fill_color
+func fill(color):
+	fill_color = color
+	$PixelFill.color = color

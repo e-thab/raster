@@ -30,6 +30,8 @@ func _on_sprite_gui_input(event):
 	if Input.is_action_just_pressed("Click"):
 		offset = position - get_viewport().get_mouse_position()
 		dragging = true
+		set("mouse_default_cursor_shape", Control.CURSOR_DRAG)
 	elif Input.is_action_just_released("Click"):
 		dragging = false
+		set("mouse_default_cursor_shape", Control.CURSOR_POINTING_HAND)
 		drag_end.emit()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7fhgwcpnvom2"]
+[gd_scene load_steps=5 format=3 uid="uid://b7fhgwcpnvom2"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_6450h"]
 [ext_resource type="PackedScene" uid="uid://c838a7fmy6wt" path="res://Pixel.tscn" id="2_5aqao"]
 [ext_resource type="PackedScene" uid="uid://k5csohdhvgvm" path="res://Handle.tscn" id="4_66vi3"]
+[ext_resource type="Texture2D" uid="uid://h6omxg1f4umi" path="res://assets/grid_1.png" id="4_mspvp"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -17,7 +18,7 @@ script = ExtResource("1_6450h")
 pixel = ExtResource("2_5aqao")
 grid_size = 40
 pixel_color = Color(0.2, 0.2, 0.2, 1)
-grid_color = Color(0.4, 0.4, 0.4, 1)
+grid_color = Color(0.273873, 0.273873, 0.273873, 1)
 
 [node name="Background" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(600, 600)
@@ -64,6 +65,18 @@ offset_top = 391.0
 offset_right = 313.0
 offset_bottom = 391.0
 color = Color(0, 0, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.235294)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_mspvp")
 
 [connection signal="reposition" from="HandleA" to="." method="_on_handle_a_reposition"]
 [connection signal="reposition" from="HandleB" to="." method="_on_handle_b_reposition"]

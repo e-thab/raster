@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://k5csohdhvgvm"]
 
-[ext_resource type="Texture2D" uid="uid://dcvbc72ox2yaj" path="res://assets/circle.png" id="1_jjnc5"]
 [ext_resource type="Script" path="res://handle.gd" id="1_jt5wl"]
+[ext_resource type="Texture2D" uid="uid://cm643p7vflger" path="res://assets/circle_20.png" id="2_fnn2t"]
 
 [node name="Handle" type="Control"]
 layout_mode = 3
@@ -20,7 +20,7 @@ offset_right = 8.0
 offset_bottom = 8.0
 mouse_filter = 0
 mouse_default_cursor_shape = 2
-texture = ExtResource("1_jjnc5")
+texture = ExtResource("2_fnn2t")
 expand_mode = 1
 
 [connection signal="gui_input" from="Sprite" to="." method="_on_sprite_gui_input"]
