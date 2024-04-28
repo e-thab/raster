@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://k5csohdhvgvm"]
+
+[ext_resource type="Texture2D" uid="uid://dcvbc72ox2yaj" path="res://assets/circle.png" id="1_jjnc5"]
+[ext_resource type="Script" path="res://handle.gd" id="1_jt5wl"]
+
+[node name="Handle" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_jt5wl")
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.584314, 0.305882, 1)
+layout_mode = 1
+anchors_preset = -1
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("1_jjnc5")
+expand_mode = 1
+
+[connection signal="gui_input" from="Sprite" to="." method="_on_sprite_gui_input"]
