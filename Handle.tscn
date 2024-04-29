@@ -10,6 +10,18 @@ mouse_filter = 1
 script = ExtResource("1_jt5wl")
 metadata/_edit_group_ = true
 
+[node name="Border" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+texture = ExtResource("2_fnn2t")
+expand_mode = 1
+
 [node name="Sprite" type="TextureRect" parent="."]
 self_modulate = Color(1, 0.584314, 0.305882, 1)
 layout_mode = 1
@@ -23,4 +35,18 @@ mouse_default_cursor_shape = 2
 texture = ExtResource("2_fnn2t")
 expand_mode = 1
 
+[node name="ColorPicker" type="ColorPicker" parent="."]
+visible = false
+top_level = true
+layout_mode = 0
+offset_right = 298.0
+offset_bottom = 408.0
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+hex_visible = false
+presets_visible = false
+
+[connection signal="gui_input" from="Border" to="." method="_on_sprite_gui_input"]
 [connection signal="gui_input" from="Sprite" to="." method="_on_sprite_gui_input"]
+[connection signal="color_changed" from="ColorPicker" to="." method="_on_color_picker_color_changed"]

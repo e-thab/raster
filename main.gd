@@ -144,7 +144,8 @@ func scanline_interpolate(pts):
 				img[x][y].fill(Color(
 					a * col_a.r + b * col_b.r + c * col_c.r,
 					a * col_a.g + b * col_b.g + c * col_c.g,
-					a * col_a.b + b * col_b.b + c * col_c.b
+					a * col_a.b + b * col_b.b + c * col_c.b,
+					a * col_a.a + b * col_b.a + c * col_c.a,
 				))
 
 
@@ -157,7 +158,6 @@ func _on_handle_a_reposition(pos):
 	var pixel_pos = get_pixel(pos)
 	if pos_a != pixel_pos:
 		pos_a = pixel_pos
-		print("A: (%s, %s)" % [pos_a.x, pos_a.y])
 		draw_triangle()
 
 
@@ -165,7 +165,6 @@ func _on_handle_b_reposition(pos):
 	var pixel_pos = get_pixel(pos)
 	if pos_b != pixel_pos:
 		pos_b = pixel_pos
-		print("B: (%s, %s)" % [pos_b.x, pos_b.y])
 		draw_triangle()
 
 
@@ -173,5 +172,37 @@ func _on_handle_c_reposition(pos):
 	var pixel_pos = get_pixel(pos)
 	if pos_c != pixel_pos:
 		pos_c = pixel_pos
-		print("C: (%s, %s)" % [pos_c.x, pos_c.y])
 		draw_triangle()
+
+
+func _on_handle_a_color_changed(color):
+	if col_a != color:
+		col_a = color
+		draw_triangle()
+
+
+func _on_handle_b_color_changed(color):
+	if col_b != color:
+		col_b = color
+		draw_triangle()
+
+
+func _on_handle_c_color_changed(color):
+	if col_c != color:
+		col_c = color
+		draw_triangle()
+
+
+func _on_handle_a_picker_opened():
+	$HandleB.hide_picker()
+	$HandleC.hide_picker()
+
+
+func _on_handle_b_picker_opened():
+	$HandleA.hide_picker()
+	$HandleC.hide_picker()
+
+
+func _on_handle_c_picker_opened():
+	$HandleA.hide_picker()
+	$HandleB.hide_picker()

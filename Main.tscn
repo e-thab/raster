@@ -78,6 +78,12 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("4_mspvp")
 
+[connection signal="color_changed" from="HandleA" to="." method="_on_handle_a_color_changed"]
+[connection signal="picker_opened" from="HandleA" to="." method="_on_handle_a_picker_opened"]
 [connection signal="reposition" from="HandleA" to="." method="_on_handle_a_reposition"]
+[connection signal="color_changed" from="HandleB" to="." method="_on_handle_b_color_changed"]
+[connection signal="picker_opened" from="HandleB" to="." method="_on_handle_b_picker_opened"]
 [connection signal="reposition" from="HandleB" to="." method="_on_handle_b_reposition"]
+[connection signal="color_changed" from="HandleC" to="." method="_on_handle_c_color_changed"]
+[connection signal="picker_opened" from="HandleC" to="." method="_on_handle_c_picker_opened"]
 [connection signal="reposition" from="HandleC" to="." method="_on_handle_c_reposition"]
