@@ -10,7 +10,7 @@ var fill_color: Color
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PixelFill.color = fill_color
-	$GridBorder.color = grid_color
+	$GridBorder.self_modulate = grid_color
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c838a7fmy6wt"]
+[gd_scene load_steps=3 format=3 uid="uid://c838a7fmy6wt"]
 
 [ext_resource type="Script" path="res://pixel.gd" id="1_ltrxk"]
+[ext_resource type="Texture2D" uid="uid://mfqd1ygog4c3" path="res://assets/grid_15.png" id="2_7b23u"]
 
 [node name="Pixel" type="Control"]
 custom_minimum_size = Vector2(1, 1)
@@ -12,16 +13,7 @@ offset_bottom = 0.200001
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_ltrxk")
-
-[node name="GridBorder" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(3, 3)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
+metadata/_edit_group_ = true
 
 [node name="PixelFill" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1, 1)
@@ -29,13 +21,19 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = -1.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 1
 color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="GridBorder" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7b23u")
